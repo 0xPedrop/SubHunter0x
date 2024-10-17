@@ -2,6 +2,7 @@ package main
 
 import (
 	"SubHunter0x/internal/search"
+	"SubHunter0x/reports"
 	"fmt"
 	"os"
 )
@@ -29,4 +30,12 @@ func main() {
 	for _, subdomain := range foundSubdomains {
 		fmt.Println(subdomain)
 	}
+
+	err = reports.SaveReport(domain, foundSubdomains, "reports/report.json")
+	if err != nil {
+		fmt.Printf("Erro ao gerar o relatório: %v\n", err)
+		return
+	}
+
+	fmt.Println("Relatório JSON gerado com sucesso em reports/report.json")
 }
