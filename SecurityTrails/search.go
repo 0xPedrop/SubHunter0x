@@ -1,4 +1,4 @@
-package SecurityTrails
+package utils
 
 import (
 	"SubHunter0x/SecurityTrails/utils"
