@@ -10,6 +10,7 @@ import (
 	"time"
 )
 
+// LoadWordList carrega a lista de subdomínios a partir de um arquivo
 func LoadWordList(filePath string) ([]string, error) {
 	var wordlist []string
 
@@ -31,6 +32,7 @@ func LoadWordList(filePath string) ([]string, error) {
 	return wordlist, nil
 }
 
+// ResolveDNS tenta resolver o DNS para um subdomínio
 func ResolveDNS(subdomain string) bool {
 	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
 	defer cancel()
@@ -41,6 +43,7 @@ func ResolveDNS(subdomain string) bool {
 	return err == nil
 }
 
+// FindSubdomains encontra os subdomínios válidos para o domínio usando a wordlist
 func FindSubdomains(domain string, wordlist []string) ([]string, error) {
 	var foundSubdomains []string
 	var mu sync.Mutex
