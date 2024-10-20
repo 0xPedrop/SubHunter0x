@@ -1,0 +1,10 @@
+[
+ {
+  "domain": "example.com",
+  "subdomains": [
+   "www.example.com",
+   "api.example.com",
+   "mail.example.com"
+  ]
+ }
+]
