@@ -78,6 +78,7 @@ func main() {
 		if err != nil {
 			fmt.Println("Erro ao salvar o relatório:", err)
 		} else {
+			fmt.Printf("")
 			fmt.Printf("Relatório salvo em %s\n", reportFilePath)
 		}
 	} else {
@@ -107,6 +108,7 @@ func main() {
 		if err != nil {
 			fmt.Println("Erro ao salvar o relatório:", err)
 		} else {
+			fmt.Printf("")
 			fmt.Printf("Relatório salvo em %s\n", reportFilePath)
 		}
 	}
